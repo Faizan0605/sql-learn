@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('./utils/db-connection')
 const userRoutes = require('./routes/userRoutes')
+const busRoutes = require('./routes/busRoutes')
 
 const app = express();
 const port = 3333;
@@ -12,6 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.use("/users", userRoutes);
+app.use("/buses", busRoutes);
 
 
 app.listen(port, () => {

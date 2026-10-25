@@ -74,4 +74,18 @@ const deleteEntries = (req, res) => {
     })
 }
 
-module.exports = { addEntries, updateEntries, deleteEntries };
+const getAllUsers = (req, res) => {
+    const selectQ = 'SELECT * FROM Users';
+
+    db.execute(selectQ, (err, results) => {
+        if (err) {
+            console.log(err.message);
+            res.status(500).send(err.message);
+            return;
+        }
+
+        res.status(200).json(results);
+    });
+};
+
+module.exports = { addEntries, updateEntries, deleteEntries, getAllUsers };

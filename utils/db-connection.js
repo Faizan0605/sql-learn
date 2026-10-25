@@ -27,33 +27,33 @@ connection.connect((err) => {
         )
     `;
 
-    // const createBuses = `
-    //     CREATE TABLE IF NOT EXISTS Buses (
-    //         id INT AUTO_INCREMENT PRIMARY KEY,
-    //         busNumber VARCHAR(20) NOT NULL,
-    //         totalSeats INT NOT NULL,
-    //         availableSeats INT NOT NULL
-    //     )
-    // `;
+    const createBuses = `
+        CREATE TABLE IF NOT EXISTS Buses (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            busNumber VARCHAR(20) NOT NULL,
+            totalSeats INT NOT NULL,
+            availableSeats INT NOT NULL
+        )
+    `;
 
-    // const createBookings = `
-    //     CREATE TABLE IF NOT EXISTS Bookings (
-    //         id INT AUTO_INCREMENT PRIMARY KEY,
-    //         seatNumber VARCHAR(10) NOT NULL
-    //     )
-    // `;
+    const createBookings = `
+        CREATE TABLE IF NOT EXISTS Bookings (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            seatNumber VARCHAR(10) NOT NULL
+        )
+    `;
 
-    // const createPayments = `
-    //     CREATE TABLE IF NOT EXISTS Payments (
-    //         id INT AUTO_INCREMENT PRIMARY KEY,
-    //         amountPaid DECIMAL(10, 2) NOT NULL,
-    //         paymentStatus VARCHAR(20) NOT NULL
-    //     )
-    // `;
+    const createPayments = `
+        CREATE TABLE IF NOT EXISTS Payments (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            amountPaid DECIMAL(10, 2) NOT NULL,
+            paymentStatus VARCHAR(20) NOT NULL
+        )
+    `;
 
     // Execute queries
     const queries = [createUsers
-        // , createBuses, createBookings, createPayments
+        , createBuses, createBookings, createPayments
     ];
 
     queries.forEach(query => {
